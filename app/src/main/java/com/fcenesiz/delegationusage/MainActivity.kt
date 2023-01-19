@@ -13,6 +13,7 @@ import com.fcenesiz.delegationusage.analytics.AnalyticsLogger
 import com.fcenesiz.delegationusage.analytics.AnalyticsLoggerImpl
 import com.fcenesiz.delegationusage.deeplink.DeepLinkHandleImpl
 import com.fcenesiz.delegationusage.deeplink.DeepLinkHandler
+import com.fcenesiz.delegationusage.lazy.MyLazy
 import com.fcenesiz.delegationusage.ui.theme.DelegationUsageTheme
 
 /**
@@ -23,10 +24,17 @@ class MainActivity :
     AnalyticsLogger by AnalyticsLoggerImpl(),
     DeepLinkHandler by DeepLinkHandleImpl() {
 
+    private val obj by MyLazy {
+        println("Hello world")
+        3
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         registerLifecycleOwner(this)
+
+        println(obj)
 
         setContent {
             DelegationUsageTheme {
