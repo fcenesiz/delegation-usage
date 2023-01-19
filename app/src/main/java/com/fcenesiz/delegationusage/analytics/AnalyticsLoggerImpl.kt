@@ -1,4 +1,4 @@
-package com.fcenesiz.delegationusage
+package com.fcenesiz.delegationusage.analytics
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
